@@ -32,11 +32,13 @@ const copyEvent = function() {
  */
 const generatePrompt = function() {
   // ラジオボタンの値を取得
+  const totalStepValue = document.querySelector('#totalStepValue').value;
   const inheritanceValue = document.querySelector('input[name="inheritance"]:checked').value;
   const interfaceValue = document.querySelector('input[name="interface"]:checked').value;
   const arrayListValue = document.querySelector('input[name="arrayList"]:checked').value;
   const arrayValue = document.querySelector('input[name="array"]:checked').value;
   const delegateValue = document.querySelector('input[name="delegate"]:checked').value;
+  const standardInputValue = document.querySelector('input[name="standardInput"]:checked').value;
 
   // プロンプト作成
   const prompt = [
@@ -48,18 +50,24 @@ const generatePrompt = function() {
     '・クラス名とクラスを構成する属性と操作の一覧を出力してください。',
     '',
     '＜条件＞',
+    `・総ステップ数: ${totalStepValue}`,
     `・継承: ${inheritanceValue}`,
     `・インターフェイス: ${interfaceValue}`,
     `・ArrayList: ${arrayListValue}`,
     `・配列: ${arrayValue}`,
     `・操作の委譲: ${delegateValue}`,
+    `・標準入力（コンソールからの手動入力）: ${standardInputValue}`,
     '',
-    '＜ルール＞',
-    '・標準入力は使わない。',
-    '',
-    '上記の要件と条件、ルールを満たすユニークな問題を作成してください。',
+    '上記の要件と条件を満たすユニークな問題を作成してください。',
     '問題の作成にはポリモーフィズムを使用してください。',
-    '出力内容は、「問題の概要」「mainメソッド処理手順」「画面表示例」「クラス名とクラスを構成する属性と操作」の順で出力してください。',
+    '出力内容は、「問題の概要」「mainメソッド処理手順」「画面表示例」「クラスの詳細」の順で出力してください。',
+    '「クラスの詳細」では以下3点を出力してください。',
+    ' ・クラス名',
+    ' ・属性',
+    ' ・操作',
+    '  ・戻り値',
+    '  ・引数',
+    '  ・どのような処理をするか',
     '答えとなるコードはまだ出力しないでください。'].join('\n');
 
   // pre要素にプロンプトを挿入
