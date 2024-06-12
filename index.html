@@ -1,0 +1,154 @@
+<!doctype html>
+
+</html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- js -->
+  <script src="./js/index.js"></script>
+
+  <title>ラリー②疑似問題作成プロンプトジェネレーター</title>
+</head>
+
+<body>
+  <nav class="navbar bg-primary-subtle">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 mx-auto">ラリー②疑似問題作成プロンプトジェネレーター ver0.0</span>
+    </div>
+  </nav>
+  <div class="card m-3 col-6 mx-auto">
+    <div class="ms-4 mt-2">
+      <h5>オプション</h5>
+      <h5>以下を選択してください</h5>
+    </div>
+    <form class="mt-2">
+      <!-- 継承 -->
+      <fieldset class="form-group">
+        <div class="row ms-5 mb-3">
+          <legend class="col-form-label col-sm-5 pt-0">継承</legend>
+          <div class="col-sm-7">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input inheritance" type="radio" name="inheritance" id="inheritance1" value="使用する"
+                checked>
+              <label class="form-check-label" for="inheritance1">
+                使用する
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input inheritance" type="radio" name="inheritance" id="inheritance2"
+                value="使用しない">
+              <label class="form-check-label" for="inheritance2">
+                使用しない
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <!-- インターフェイス -->
+      <fieldset class="form-group">
+        <div class="row ms-5 mb-3">
+          <legend class="col-form-label col-sm-5 pt-0">インターフェイス</legend>
+          <div class="col-sm-7">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input interface" type="radio" name="interface" id="interface1" value="使用する"
+                checked>
+              <label class="form-check-label" for="interface1">
+                使用する
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input interface" type="radio" name="interface" id="interface2" value="使用しない">
+              <label class="form-check-label" for="interface2">
+                使用しない
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <!-- ArrayList -->
+      <fieldset class="form-group">
+        <div class="row ms-5 mb-3">
+          <legend class="col-form-label col-sm-5 pt-0">ArrayList</legend>
+          <div class="col-sm-7">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input arrayList" type="radio" name="arrayList" id="arrayList1" value="使用する"
+                checked>
+              <label class="form-check-label" for="arrayList1">
+                使用する
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input arrayList" type="radio" name="arrayList" id="arrayList2" value="使用しない">
+              <label class="form-check-label" for="arrayList2">
+                使用しない
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <!-- 配列 -->
+      <fieldset class="form-group">
+        <div class="row ms-5 mb-3">
+          <legend class="col-form-label col-sm-5 pt-0">配列</legend>
+          <div class="col-sm-7">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input array" type="radio" name="array" id="array1" value="使用する" checked>
+              <label class="form-check-label" for="array1">
+                使用する
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input array" type="radio" name="array" id="array2" value="使用しない">
+              <label class="form-check-label" for="array2">
+                使用しない
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <!-- 操作の委譲 -->
+      <fieldset class="form-group">
+        <div class="row ms-5 mb-3">
+          <legend class="col-form-label col-sm-5 pt-0">操作の委譲</legend>
+          <div class="col-sm-7">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input delegate" type="radio" name="delegate" id="delegate1" value="使用する" checked>
+              <label class="form-check-label" for="delegate1">
+                使用する
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input delegate" type="radio" name="delegate" id="delegate2" value="使用しない">
+              <label class="form-check-label" for="delegate2">
+                使用しない
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <div class="d-flex justify-content-center mt-3">
+        <div class="pb-2">
+          <a class="btn btn-primary" id="btn-generate">作成</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="promptArea" class="m-3 col-6 mx-auto d-none">
+    <pre></pre>
+    <div class="d-flex justify-content-center mt-3">
+      <div class="pb-2">
+        <a class="btn btn-success" id="btn-copy">プロンプトをコピーしてChatGPTへ画面遷移</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
